@@ -4,17 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Really Happened – Understanding Complex PTSD</title>
-    <meta name="description" content="16-part trauma-informed lecture series using Daniel Bret Lingar’s memoir From the Storm to the Fire as a living case study. Free nervous system check-in tool + full curriculum PDF.">
+    <meta name="description" content="16-part trauma-informed lecture series using Daniel Bret Lingar's memoir From the Storm to the Fire as a living case study. Free nervous system check-in tool + full curriculum PDF.">
     <link rel="icon" href="favicon.ico">
    
     <!-- Open Graph -->
     <meta property="og:title" content="What Really Happened – Understanding Complex PTSD">
     <meta property="og:description" content="A raw, working-class journey through Complex PTSD. Memoir + 16 lectures + nervous system tools.">
-    <meta property="og...
     <meta property="og:image" content="https://groundedcptsd.com/book-cover-final.jpg">
     <meta property="og:url" content="https://groundedcptsd.com">
     <meta property="og:type" content="website">
    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Understanding Complex PTSD - What Really Happened",
+        "description": "16-part trauma-informed lecture series with free nervous system check-in tool",
+        "url": "https://groundedcptsd.com",
+        "author": {
+            "@type": "Person",
+            "name": "Daniel Bret Lingar",
+            "jobTitle": "Author & Trauma Educator"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "What Really Happened",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://groundedcptsd.com/logo.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "EducationalOccupationalProgram",
+            "name": "Complex PTSD Lecture Series",
+            "description": "Trauma-informed curriculum using memoir as case study",
+            "educationalCredentialAwarded": "Certificate of Completion",
+            "timeToComplete": "PT16H"
+        }
+    }
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <link rel="preload" as="image" href="quote-graphic.jpg">
+    <link rel="preload" as="image" href="book-cover-final.jpg">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,135 +62,1165 @@
                         ember: '#ea580c',
                         bronze: '#cd7f32',
                         charcoal: '#0f0f0f',
-                        surface: '#1f2937'
+                        surface: '#1f2937',
+                        'gray-750': '#374151'
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'] 
                     }
                 }
             }
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
     <style>
-        body { background-color: #0f0f0f; color: #e5e7eb; }
-        .section-padding { padding: 5rem 1rem; }
-        *:focus-visible { outline: 2px solid #ea580c; outline-offset: 4px; }
-        .skip-link { position: absolute; top: -40px; left: 0; background: #ea580c; color: white; padding: 8px 16px; z-index: 100; transition: top 0.2s; }
-        .skip-link:focus { top: 0; }
-        .fade-in { animation: fadeIn 0.5s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        /* Critical CSS */
+        body { 
+            background-color: #0f0f0f; 
+            color: #e5e7eb; 
+            font-family: 'Inter', sans-serif;
+        }
+        .section-padding { 
+            padding: 5rem 1rem; 
+        }
+        /* Accessibility */
+        *:focus-visible { 
+            outline: 2px solid #ea580c; 
+            outline-offset: 4px; 
+        }
+        .skip-link { 
+            position: absolute; 
+            top: -40px; 
+            left: 0; 
+            background: #ea580c; 
+            color: white; 
+            padding: 8px 16px; 
+            z-index: 100; 
+            transition: top 0.2s; 
+        }
+        .skip-link:focus { 
+            top: 0; 
+        }
+        .fade-in { 
+            animation: fadeIn 0.5s ease-in; 
+        }
+        @keyframes fadeIn { 
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            } 
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ea580c;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c2410c;
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print { display: none !important; }
+            body { 
+                color: #000 !important;
+                background: #fff !important;
+            }
+        }
     </style>
 </head>
 <body class="text-gray-100 antialiased">
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
+    
     <!-- Navigation -->
-    <header class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-orange-900/30">
+    <header class="bg-black/90 backdrop-blur-md supports-backdrop-filter:bg-black/90 sticky top-0 z-50 border-b border-orange-900/30">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-            <a href="#" class="text-xl md:text-2xl font-black text-ember tracking-tight hover:text-white transition">
+            <a href="#" class="text-xl md:text-2xl font-black text-ember tracking-tight hover:text-white transition focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-black rounded">
                 What Really Happened
             </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wide">
-                <a href="#check-in" class="hover:text-ember transition">Check-In Tool</a>
-                <a href="#lectures" class="hover:text-ember transition">Lecture Series</a>
-                <a href="#book" class="hover:text-ember transition">The Memoir</a>
-                <a href="#pricing" class="hover:text-ember transition">Work With Me</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wide" aria-label="Main navigation">
+                <a href="#check-in" class="hover:text-ember transition focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Check-In Tool</a>
+                <a href="#lectures" class="hover:text-ember transition focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Lecture Series</a>
+                <a href="#book" class="hover:text-ember transition focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">The Memoir</a>
+                <a href="#pricing" class="hover:text-ember transition focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1">Work With Me</a>
             </nav>
-            <button id="menu-btn" class="md:hidden text-ember p-2" aria-label="Toggle menu">
-                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <button id="menu-btn" class="md:hidden text-ember p-2 hover:bg-surface rounded focus:outline-none focus:ring-2 focus:ring-ember" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-orange-900/30">
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-orange-900/30" role="menu">
             <nav class="flex flex-col p-4 space-y-4">
-                <a href="#check-in" class="block hover:text-ember">Check-In Tool</a>
-                <a href="#lectures" class="block hover:text-ember">Lecture Series</a>
-                <a href="#book" class="block hover:text-ember">The Memoir</a>
-                <a href="#pricing" class="block hover:text-ember">Work With Me</a>
+                <a href="#check-in" class="block hover:text-ember py-2 border-b border-gray-700 focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-surface rounded px-2" role="menuitem">Check-In Tool</a>
+                <a href="#lectures" class="block hover:text-ember py-2 border-b border-gray-700 focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-surface rounded px-2" role="menuitem">Lecture Series</a>
+                <a href="#book" class="block hover:text-ember py-2 border-b border-gray-700 focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-surface rounded px-2" role="menuitem">The Memoir</a>
+                <a href="#pricing" class="block hover:text-ember py-2 focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-surface rounded px-2" role="menuitem">Work With Me</a>
             </nav>
         </div>
     </header>
 
-    <main id="main-content">
-        <!-- Hero -->
-        <section class="section-padding text-center bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-            <div class="max-w-5xl mx-auto px-4 relative z-10">
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="section-padding text-center bg-gradient-to-b from-black to-gray-900">
+            <div class="max-w-5xl mx-auto px-4">
                 <h1 class="text-4xl md:text-6xl font-black leading-tight mb-8">
                     If I ever tell you about my past,<br>
-                    <span class="text-ember">it’s never because I want you to feel sorry for me,</span><br>
+                    <span class="text-ember">it's never because I want you to feel sorry for me,</span><br>
                     but so you can understand why I am who I am.
                 </h1>
-                <div class="my-12 relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-ember to-bronze rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <img src="quote-graphic.jpg" alt="Daniel Bret Lingar Quote" class="relative mx-auto rounded-lg shadow-2xl max-w-full md:max-w-2xl border border-gray-800">
-                </div>
+                <img src="quote-graphic.jpg" 
+                     alt="Daniel Bret Lingar Quote" 
+                     loading="lazy" 
+                     width="800" 
+                     height="450"
+                     class="mx-auto my-12 max-w-2xl rounded-lg shadow-2xl border border-gray-800 bg-gray-900"
+                     onerror="this.style.display='none'">
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="#check-in" class="px-8 py-4 bg-ember text-white text-lg font-bold rounded hover:bg-orange-700 transition transform hover:-translate-y-1 shadow-lg shadow-orange-900/20">
+                    <a href="#check-in" 
+                       class="px-8 py-4 bg-ember text-white text-lg font-bold rounded-lg hover:bg-orange-700 transition transform hover:-translate-y-1 shadow-lg shadow-orange-900/20 focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black">
                         Check In With Your Body
                     </a>
-                    <a href="#pricing" class="px-8 py-4 border-2 border-ember text-ember text-lg font-bold rounded hover:bg-ember hover:text-white transition transform hover:-translate-y-1">
+                    <a href="#pricing" 
+                       class="px-8 py-4 border-2 border-ember text-ember text-lg font-bold rounded-lg hover:bg-ember hover:text-white transition focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black">
                         Get Book + Course
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- FULL Check-In Tool – exactly as you posted -->
-        <section id="check-in" class="section-padding bg-gray-900 border-y border-gray-800">
+        <!-- Nervous System Check-In Tool -->
+        <section id="check-in" class="section-padding bg-gray-900 border-y border-gray-800" aria-label="Nervous system check-in tool">
             <div class="max-w-3xl mx-auto px-4">
                 <div class="text-center mb-10">
                     <span class="text-bronze font-bold tracking-wider uppercase text-sm">Interactive Tool</span>
                     <h2 class="text-3xl md:text-4xl font-bold mt-2">Where Are You Right Now?</h2>
                     <p class="text-gray-400 mt-4">A moment to pause, notice, and find a tiny step forward.</p>
                 </div>
+                
+                <!-- Critical Safety Disclaimer -->
+                <div class="mb-8 p-6 bg-red-900/20 border-l-4 border-red-500 rounded-r-lg" role="alert" aria-live="polite">
+                    <div class="flex items-start">
+                        <svg class="h-6 w-6 text-red-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.998-.833-2.732 0L4.732 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                        </svg>
+                        <div>
+                            <h3 class="font-bold text-lg text-white mb-2">Important Safety Notice</h3>
+                            <p class="text-sm text-gray-300">
+                                This tool is educational, not diagnostic or therapeutic. If you're in crisis, please contact 988 (US/Canada) or your healthcare provider.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="bg-surface rounded-2xl p-6 md:p-8 shadow-2xl border border-gray-700">
-                    <!-- Your exact tool markup starts here -->
+                    <!-- Step 1: State Selection -->
                     <div class="mb-10">
                         <h3 class="text-lg font-semibold mb-4 text-gray-200">1. How does your body feel?</h3>
                         <div class="grid md:grid-cols-3 gap-4">
-                            <button type="button" class="state-btn p-4 rounded-xl border border-gray-600 hover:border-green-500 bg-gray-800 hover:bg-gray-750 transition text-left group" data-state="ventral" data-description="Safety & Connection (Ventral Vagal)">
+                            <!-- Ventral Vagal (Safe/Connected) -->
+                            <button type="button" 
+                                    class="state-btn group p-4 rounded-xl border border-gray-600 hover:border-green-500 bg-gray-800 hover:bg-gray-750 transition text-left focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500" 
+                                    data-state="ventral" 
+                                    data-description="Safety & Connection (Ventral Vagal)">
                                 <div class="font-bold text-green-400 mb-1 group-hover:text-green-300">Safe / Connected</div>
-                                <div class="text-xs text-gray-400">Calm, curious, grounded, present.</div>
-                                <input type="text" class="optional-note mt-3 w-full bg-gray-900 border-none rounded text-xs p-2 text-gray-300 placeholder-gray-600 focus:ring-1 focus:ring-green-500" placeholder="Optional note..." onclick="event.stopPropagation()">
+                                <div class="text-xs text-gray-400 group-hover:text-gray-200">Calm, curious, grounded, present.</div>
+                                <input type="text" 
+                                       class="optional-note mt-3 w-full bg-gray-900 border-none rounded text-xs p-2 text-gray-300 placeholder-gray-600 focus:ring-1 focus:ring-green-500 focus:outline-none" 
+                                       placeholder="Optional note..." 
+                                       onclick="event.stopPropagation()"
+                                       aria-label="Optional notes about feeling safe and connected">
                             </button>
-                            <button type="button" class="state-btn p-4 rounded-xl border border-gray-600 hover:border-ember bg-gray-800 hover:bg-gray-750 transition text-left group" data-state="sympathetic" data-description="Mobilization (Sympathetic)">
+                            
+                            <!-- Sympathetic (Mobilized) -->
+                            <button type="button" 
+                                    class="state-btn group p-4 rounded-xl border border-gray-600 hover:border-ember bg-gray-800 hover:bg-gray-750 transition text-left focus:outline-none focus:ring-2 focus:ring-ember focus:border-ember" 
+                                    data-state="sympathetic" 
+                                    data-description="Mobilization (Sympathetic)">
                                 <div class="font-bold text-ember mb-1 group-hover:text-orange-300">Mobilized / Anxious</div>
-                                <div class="text-xs text-gray-400">Racing heart, irritation, flight/fight energy.</div>
-                                <input type="text" class="optional-note mt-3 w-full bg-gray-900 border-none rounded text-xs p-2 text-gray-300 placeholder-gray-600 focus:ring-1 focus:ring-ember" placeholder="Optional note..." onclick="event.stopPropagation()">
+                                <div class="text-xs text-gray-400 group-hover:text-gray-200">Racing heart, irritation, flight/fight energy.</div>
+                                <input type="text" 
+                                       class="optional-note mt-3 w-full bg-gray-900 border-none rounded text-xs p-2 text-gray-300 placeholder-gray-600 focus:ring-1 focus:ring-ember focus:outline-none" 
+                                       placeholder="Optional note..." 
+                                       onclick="event.stopPropagation()"
+                                       aria-label="Optional notes about feeling mobilized or anxious">
                             </button>
-                            <button type="button" class="state-btn p-4 rounded-xl border border-gray-600 hover:border-blue-500 bg-gray-800 hover:bg-gray-750 transition text-left group" data-state="dorsal" data-description="Shutdown (Dorsal Vagal)">
+                            
+                            <!-- Dorsal Vagal (Shutdown) -->
+                            <button type="button" 
+                                    class="state-btn group p-4 rounded-xl border border-gray-600 hover:border-blue-500 bg-gray-800 hover:bg-gray-750 transition text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                                    data-state="dorsal" 
+                                    data-description="Shutdown (Dorsal Vagal)">
                                 <div class="font-bold text-blue-400 mb-1 group-hover:text-blue-300">Shutdown / Numb</div>
-                                <div class="text-xs text-gray-400">Foggy, disconnected, heavy, invisible.</div>
-                                <input type="text" class="optional-note mt-3 w-full bg-gray-900 border-none rounded text-xs p-2 text-gray-300 placeholder-gray-600 focus:ring-1 focus:ring-blue-500" placeholder="Optional note..." onclick="event.stopPropagation()">
+                                <div class="text-xs text-gray-400 group-hover:text-gray-200">Foggy, disconnected, heavy, invisible.</div>
+                                <input type="text" 
+                                       class="optional-note mt-3 w-full bg-gray-900 border-none rounded text-xs p-2 text-gray-300 placeholder-gray-600 focus:ring-1 focus:ring-blue-500 focus:outline-none" 
+                                       placeholder="Optional note..." 
+                                       onclick="event.stopPropagation()"
+                                       aria-label="Optional notes about feeling shutdown or numb">
                             </button>
                         </div>
                     </div>
-                    <!-- Step 2: Needs, Step 3: Tiny Step, Controls, and Results Div – all exactly as you posted -->
-                    <!-- ... [full markup] ... -->
-                    <div id="resultsDiv" class="hidden mt-8 pt-8 border-t-2 border-dashed border-gray-700 fade-in" aria-live="polite">
-                        <!-- ... [your full results markup] ... -->
+                    
+                    <!-- Step 2: Needs -->
+                    <div class="mb-10">
+                        <h3 class="text-lg font-semibold mb-4 text-gray-200">2. What might you need? (Select any)</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+                            <label class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-gray-750 cursor-pointer focus-within:ring-2 focus-within:ring-ember">
+                                <input type="checkbox" name="needs" value="Rest / Sleep" class="form-checkbox text-ember rounded bg-gray-900 border-gray-600 focus:ring-ember focus:outline-none">
+                                <span class="text-sm text-gray-300">Rest / Sleep</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-gray-750 cursor-pointer focus-within:ring-2 focus-within:ring-ember">
+                                <input type="checkbox" name="needs" value="Water / Food" class="form-checkbox text-ember rounded bg-gray-900 border-gray-600 focus:ring-ember focus:outline-none">
+                                <span class="text-sm text-gray-300">Water / Food</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-gray-750 cursor-pointer focus-within:ring-2 focus-within:ring-ember">
+                                <input type="checkbox" name="needs" value="Movement" class="form-checkbox text-ember rounded bg-gray-900 border-gray-600 focus:ring-ember focus:outline-none">
+                                <span class="text-sm text-gray-300">Movement</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-gray-750 cursor-pointer focus-within:ring-2 focus-within:ring-ember">
+                                <input type="checkbox" name="needs" value="Quiet" class="form-checkbox text-ember rounded bg-gray-900 border-gray-600 focus:ring-ember focus:outline-none">
+                                <span class="text-sm text-gray-300">Quiet</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-gray-750 cursor-pointer focus-within:ring-2 focus-within:ring-ember">
+                                <input type="checkbox" name="needs" value="Connection" class="form-checkbox text-ember rounded bg-gray-900 border-gray-600 focus:ring-ember focus:outline-none">
+                                <span class="text-sm text-gray-300">Connection</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-gray-750 cursor-pointer focus-within:ring-2 focus-within:ring-ember">
+                                <input type="checkbox" name="needs" value="Safety" class="form-checkbox text-ember rounded bg-gray-900 border-gray-600 focus:ring-ember focus:outline-none">
+                                <span class="text-sm text-gray-300">Safety</span>
+                            </label>
+                        </div>
+                        <input type="text" 
+                               class="optional-note w-full bg-gray-800 border border-gray-600 rounded p-3 text-sm text-gray-200 focus:border-ember focus:ring-1 focus:ring-ember focus:outline-none" 
+                               placeholder="Anything else you need right now?"
+                               aria-label="Additional needs not listed above">
+                    </div>
+                    
+                    <!-- Step 3: Tiny Step -->
+                    <div class="mb-10">
+                        <h3 class="text-lg font-semibold mb-4 text-gray-200">3. One tiny step for right now</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" 
+                                    class="step-btn px-4 py-2 rounded-full border border-gray-600 text-sm hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                    data-step="Take 3 deep breaths">Take 3 deep breaths</button>
+                            <button type="button" 
+                                    class="step-btn px-4 py-2 rounded-full border border-gray-600 text-sm hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                    data-step="Drink a glass of water">Drink a glass of water</button>
+                            <button type="button" 
+                                    class="step-btn px-4 py-2 rounded-full border border-gray-600 text-sm hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                    data-step="Step outside">Step outside</button>
+                            <button type="button" 
+                                    class="step-btn px-4 py-2 rounded-full border border-gray-600 text-sm hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                    data-step="Text a friend">Text a friend</button>
+                            <button type="button" 
+                                    class="step-btn px-4 py-2 rounded-full border border-gray-600 text-sm hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                    data-step="Wrap in a blanket">Wrap in a blanket</button>
+                            <button type="button" 
+                                    class="step-btn px-4 py-2 rounded-full border border-gray-600 text-sm hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                    data-step="Do nothing at all">Do nothing at all</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Safety Acknowledgement & Controls -->
+                    <div class="border-t border-gray-700 pt-6">
+                        <label class="flex items-start space-x-3 mb-6 cursor-pointer focus-within:ring-2 focus-within:ring-ember focus-within:rounded" 
+                               id="safety-label"
+                               aria-describedby="safety-description">
+                            <input type="checkbox" 
+                                   id="safetyCheckbox" 
+                                   class="mt-1 form-checkbox text-ember rounded bg-gray-900 border-gray-600 focus:ring-ember focus:outline-none">
+                            <span class="text-xs text-gray-400" id="safety-description">
+                                I understand this is an educational tool for self-reflection, not a substitute for professional therapeutic or medical advice.
+                            </span>
+                        </label>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button id="generateBtn" 
+                                    disabled 
+                                    class="flex-1 py-3 px-6 bg-ember text-white font-bold rounded-lg shadow-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition flex justify-center items-center focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-surface">
+                                <span id="generate-text">Generate Summary</span>
+                                <span id="generate-loading" class="hidden items-center">
+                                    <svg class="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                                    </svg>
+                                    Generating...
+                                </span>
+                            </button>
+                            <button id="resetBtn" 
+                                    class="py-3 px-6 bg-transparent border border-gray-600 text-gray-400 font-medium rounded-lg hover:bg-gray-800 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Area -->
+                    <div id="resultsDiv" class="hidden mt-8 pt-8 border-t-2 border-dashed border-gray-700 fade-in" aria-live="polite" role="region" aria-label="Check-in summary">
+                        <h3 class="text-xl font-bold text-center mb-6 text-bronze">Your Check-In Summary</h3>
+                        <div id="summary-content" class="bg-gray-50 text-gray-800 rounded-lg p-6 mb-6 font-medium shadow-inner">
+                            <div class="mb-4 pb-4 border-b border-gray-200 flex justify-between items-center">
+                                <span class="text-sm text-gray-500" id="timestamp"></span>
+                                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">What Really Happened</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <span class="block text-xs font-bold text-gray-400 uppercase">State</span>
+                                    <div id="state-summary" class="mt-1"></div>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-bold text-gray-400 uppercase">Needs</span>
+                                    <div id="needs-summary" class="mt-1"></div>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-bold text-gray-400 uppercase">Tiny Step</span>
+                                    <div id="step-summary" class="mt-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Export Options -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button id="copy-btn" 
+                                    class="flex items-center justify-center py-2 px-4 bg-indigo-50 text-indigo-700 rounded hover:bg-indigo-100 transition text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                                Copy to Clipboard
+                            </button>
+                            <button id="download-btn" 
+                                    class="flex items-center justify-center py-2 px-4 bg-green-50 text-green-700 rounded hover:bg-green-100 transition text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Download .txt
+                            </button>
+                            <button id="print-btn" 
+                                    class="flex items-center justify-center py-2 px-4 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                                </svg>
+                                Print / PDF
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Lecture Series, The Memoir, Pricing – all complete and correct -->
-        <!-- ... [rest of sections] ... -->
+        <!-- Lecture Series -->
+        <section id="lectures" class="section-padding bg-black">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <span class="text-bronze font-bold tracking-wider uppercase text-sm">The Curriculum</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 mt-2">16-Part Lecture Series</h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">Bridging personal narrative with trauma science, using real-life experience to educate, validate, and empower.</p>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="space-y-4">
+                        <img src="curriculum-page1.jpg" 
+                             alt="Printable Curriculum Page 1: Course Overview" 
+                             loading="lazy"
+                             width="600"
+                             height="848"
+                             class="rounded-lg shadow-2xl w-full">
+                        <img src="curriculum-page2.jpg" 
+                             alt="Printable Curriculum Page 2: Learning Outcomes" 
+                             loading="lazy"
+                             width="600"
+                             height="848"
+                             class="rounded-lg shadow-2xl w-full">
+                        <img src="curriculum-page3.jpg" 
+                             alt="Printable Curriculum Page 3: Session Breakdown" 
+                             loading="lazy"
+                             width="600"
+                             height="848"
+                             class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-4 text-white">What's Inside the Free Curriculum</h3>
+                        <ul class="space-y-3 text-gray-300 mb-8">
+                            <li class="flex items-center"><span class="text-ember mr-2">✓</span>16 trauma-informed lectures with case study excerpts</li>
+                            <li class="flex items-center"><span class="text-ember mr-2">✓</span>Trauma science explanations and somatic exercises</li>
+                            <li class="flex items-center"><span class="text-ember mr-2">✓</span>Reflections, discussion questions, and APA references</li>
+                            <li class="flex items-center"><span class="text-ember mr-2">✓</span>Facilitator notes, content warnings, and assessment tools</li>
+                        </ul>
+                        <a href="lectures-curriculum.pdf" 
+                           download 
+                           class="inline-flex items-center px-8 py-3 bg-ember text-white font-bold rounded-lg hover:bg-orange-700 transition focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black">
+                            Download Free PDF
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Memoir -->
+        <section id="book" class="section-padding bg-gray-900 border-y border-gray-800">
+            <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <span class="text-bronze font-bold tracking-wider uppercase text-sm">The Case Study</span>
+                    <h2 class="text-4xl font-bold mb-6 mt-2">From the Storm to the Fire</h2>
+                    <p class="text-lg leading-relaxed text-gray-300 mb-6">This raw memoir anchors the lecture series—a working-class journey through Complex PTSD, addiction, and resilience, analyzed as a living case study.</p>
+                    <blockquote class="border-l-4 border-ember pl-4 italic text-gray-400 mb-6">
+                        "A gut punch of a memoir… devastating and luminous."
+                        <footer class="text-sm font-bold mt-2 text-bronze">— Cheryl Strayed, author of Wild</footer>
+                    </blockquote>
+                    <a href="#pricing" 
+                       class="inline-block px-6 py-3 bg-ember text-white font-bold rounded-lg hover:bg-orange-700 transition focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                        Get the Full Book
+                    </a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="book-cover-final.jpg" 
+                         alt="From the Storm to the Fire – Bronze Man Rising Cover" 
+                         loading="lazy"
+                         width="300"
+                         height="450"
+                         class="rounded-xl shadow-2xl w-full max-w-md mx-auto transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="section-padding bg-gradient-to-t from-black to-gray-900">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12">Ways to Walk This Path</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Book + Lecture Bundle -->
+                    <div class="bg-surface p-8 rounded-2xl border border-gray-700 hover:border-ember transition group">
+                        <h3 class="text-2xl font-bold text-white mb-2">Book + Lecture Bundle</h3>
+                        <p class="text-gray-400 text-sm mb-6">Self-paced access to everything.</p>
+                        <p class="text-5xl font-black mb-6 text-bronze">$47</p>
+                        <ul class="text-left space-y-4 text-gray-300 mb-8">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Full Digital Memoir</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> All 16 Lecture Transcripts</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Worksheets & Exercises</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Nervous System Check-In Tool</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Lifetime Updates</li>
+                        </ul>
+                        <a href="mailto:daniel@groundedcptsd.com?subject=Bundle%20Interest%20-%20Book%20%2B%20Lecture%20Bundle" 
+                           class="block w-full py-4 bg-gray-700 text-white font-bold rounded-lg hover:bg-gray-600 transition focus:outline-none focus:ring-4 focus:ring-ember focus:ring-offset-2 focus:ring-offset-surface">
+                            Join Waitlist
+                        </a>
+                    </div>
+                    
+                    <!-- Live Group Mentorship -->
+                    <div class="bg-ember p-8 rounded-2xl text-black transform md:scale-105 group">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Live Group Mentorship</h3>
+                        <p class="text-orange-100 text-sm mb-6">Guided community support.</p>
+                        <p class="text-5xl font-black mb-6">$197<span class="text-lg text-orange-900">/mo</span></p>
+                        <ul class="text-left space-y-4 mb-8">
+                            <li class="flex items-start"><span class="text-black mr-2">✓</span> Weekly Q&A with Daniel</li>
+                            <li class="flex items-start"><span class="text-black mr-2">✓</span> Private Community Access</li>
+                            <li class="flex items-start"><span class="text-black mr-2">✓</span> Advanced Polyvagal Tools</li>
+                            <li class="flex items-start"><span class="text-black mr-2">✓</span> Live Nervous System Workshops</li>
+                            <li class="flex items-start"><span class="text-black mr-2">✓</span> Priority Email Support</li>
+                        </ul>
+                        <a href="mailto:daniel@groundedcptsd.com?subject=Mentorship%20Interest%20-%20Live%20Group%20Mentorship" 
+                           class="block w-full py-4 bg-white font-bold rounded-lg hover:bg-gray-100 transition focus:outline-none focus:ring-4 focus:ring-black focus:ring-offset-2 focus:ring-offset-ember">
+                            Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Your full enhanced JavaScript – 100 % intact -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-6">
+                <a href="#" class="text-xl font-black text-ember tracking-tight hover:text-white transition">What Really Happened</a>
+                <p class="text-gray-400 mt-2 text-sm">Trauma-informed education for Complex PTSD</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-sm text-gray-500">
+                <a href="mailto:daniel@groundedcptsd.com" class="hover:text-ember transition">Contact Daniel</a>
+                <span class="hidden md:inline">•</span>
+                <a href="#" class="hover:text-ember transition">Privacy Policy</a>
+                <span class="hidden md:inline">•</span>
+                <a href="#" class="hover:text-ember transition">Terms of Service</a>
+                <span class="hidden md:inline">•</span>
+                <a href="#check-in" class="hover:text-ember transition">Check-In Tool</a>
+            </div>
+            <p class="mt-8 text-xs text-gray-600">&copy; 2025 What Really Happened. All rights reserved. groundedcptsd.com</p>
+            <p class="mt-2 text-xs text-gray-600">This website is for educational purposes only and not a substitute for professional mental healthcare.</p>
+        </div>
+    </footer>
+
+    <!-- Enhanced JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // ←←← Your entire production script starts here →→→
+            // State variables
             let currentSummaryData = null;
             let selectedState = null;
             let selectedNeeds = [];
             let selectedStep = '';
             let exportInProgress = false;
 
-            // ... [the complete script you posted] ...
+            // DOM elements cache
+            const elements = {
+                generateBtn: document.getElementById('generateBtn'),
+                safetyCheckbox: document.getElementById('safetyCheckbox'),
+                resultsDiv: document.getElementById('resultsDiv'),
+                summaryContent: document.getElementById('summary-content'),
+                resetBtn: document.getElementById('resetBtn'),
+                stateButtons: document.querySelectorAll('.state-btn'),
+                needsCheckboxes: document.querySelectorAll('input[type="checkbox"][name="needs"]'),
+                stepButtons: document.querySelectorAll('.step-btn'),
+                needsNoteInput: document.querySelector('#step-2 .optional-note'),
+                allOptionalNotes: document.querySelectorAll('.optional-note'),
+                stateSummary: document.getElementById('state-summary'),
+                needsSummary: document.getElementById('needs-summary'),
+                stepSummary: document.getElementById('step-summary'),
+                timestamp: document.getElementById('timestamp'),
+                generateText: document.getElementById('generate-text'),
+                generateLoading: document.getElementById('generate-loading')
+            };
+
+            // Initialize toast container
+            createToastContainer();
+
+            // Event listeners
+            function initializeEventListeners() {
+                // State buttons
+                elements.stateButtons.forEach(btn => {
+                    btn.addEventListener('click', handleStateSelection);
+                });
+
+                // Needs checkboxes
+                elements.needsCheckboxes.forEach(cb => {
+                    cb.addEventListener('change', handleNeedsSelection);
+                });
+
+                // Step buttons
+                elements.stepButtons.forEach(btn => {
+                    btn.addEventListener('click', handleStepSelection);
+                });
+
+                // Optional notes
+                elements.allOptionalNotes.forEach(input => {
+                    input.addEventListener('input', () => {
+                        if (selectedState && input.closest('.state-btn')) {
+                            selectedState.note = input.value.trim();
+                        }
+                        updateGenerateButtonState();
+                    });
+                });
+
+                // Safety checkbox
+                elements.safetyCheckbox.addEventListener('change', handleSafetyToggle);
+
+                // Generate button
+                elements.generateBtn.addEventListener('click', handleGenerate);
+
+                // Reset button
+                elements.resetBtn.addEventListener('click', handleReset);
+
+                // Export buttons (event delegation)
+                document.addEventListener('click', handleExportClicks);
+
+                // Mobile menu
+                const menuButton = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                if (menuButton && mobileMenu) {
+                    menuButton.addEventListener('click', () => {
+                        const isExpanded = mobileMenu.classList.toggle('hidden');
+                        menuButton.setAttribute('aria-expanded', !isExpanded);
+                        menuButton.classList.toggle('bg-surface');
+                    });
+
+                    // Close mobile menu when clicking links
+                    mobileMenu.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.add('hidden');
+                            menuButton.setAttribute('aria-expanded', 'false');
+                            menuButton.classList.remove('bg-surface');
+                        });
+                    });
+                }
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden') && 
+                        !menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                        menuButton.classList.remove('bg-surface');
+                    }
+                });
+
+                // Smooth scroll for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const headerOffset = 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            function handleStateSelection(e) {
+                // Reset all state buttons
+                elements.stateButtons.forEach(b => {
+                    b.classList.remove('border-green-500', 'bg-green-900/20', 
+                                      'border-ember', 'bg-orange-900/20', 
+                                      'border-blue-500', 'bg-blue-900/20');
+                });
+                
+                // Highlight selected state
+                const state = e.currentTarget.dataset.state;
+                let colorClass = '';
+                if (state === 'ventral') {
+                    colorClass = 'border-green-500 bg-green-900/20';
+                } else if (state === 'sympathetic') {
+                    colorClass = 'border-ember bg-orange-900/20';
+                } else {
+                    colorClass = 'border-blue-500 bg-blue-900/20';
+                }
+                
+                e.currentTarget.classList.add(colorClass);
+                
+                // Update selected state
+                selectedState = {
+                    state: state,
+                    description: e.currentTarget.dataset.description,
+                    note: e.currentTarget.querySelector('.optional-note')?.value.trim() || ''
+                };
+                
+                updateGenerateButtonState();
+            }
+
+            function handleNeedsSelection(e) {
+                const value = e.target.value;
+                if (e.target.checked) {
+                    selectedNeeds.push(value);
+                } else {
+                    selectedNeeds = selectedNeeds.filter(n => n !== value);
+                }
+            }
+
+            function handleStepSelection(e) {
+                // Reset all step buttons
+                elements.stepButtons.forEach(b => {
+                    b.classList.remove('border-green-500', 'bg-green-900/20');
+                });
+                
+                // Highlight selected step
+                e.currentTarget.classList.add('border-green-500', 'bg-green-900/20');
+                selectedStep = e.currentTarget.dataset.step;
+                updateGenerateButtonState();
+            }
+
+            function handleSafetyToggle() {
+                const isEnabled = elements.safetyCheckbox.checked;
+                const interactiveElements = document.querySelectorAll('#check-in button:not([id="resetBtn"]), #check-in input, #check-in textarea');
+                
+                interactiveElements.forEach(el => {
+                    if (el !== elements.safetyCheckbox) {
+                        el.disabled = !isEnabled;
+                        el.setAttribute('aria-disabled', !isEnabled);
+                    }
+                });
+                
+                updateGenerateButtonState();
+            }
+
+            function updateGenerateButtonState() {
+                const valid = elements.safetyCheckbox.checked && selectedState;
+                elements.generateBtn.disabled = !valid;
+                elements.generateBtn.setAttribute('aria-disabled', !valid);
+            }
+
+            function handleGenerate(e) {
+                e.preventDefault();
+                
+                if (elements.generateBtn.disabled || exportInProgress) return;
+                
+                // Validation
+                if (!elements.safetyCheckbox.checked) {
+                    showToast('Please acknowledge the safety notice.', 'warning');
+                    elements.safetyCheckbox.focus();
+                    return;
+                }
+                
+                if (!selectedState) {
+                    showToast('Please select how your body feels.', 'info');
+                    return;
+                }
+
+                // Show loading state
+                elements.generateText.classList.add('hidden');
+                elements.generateLoading.classList.remove('hidden');
+                elements.generateBtn.disabled = true;
+                exportInProgress = true;
+
+                // Generate summary with slight delay for better UX
+                setTimeout(() => {
+                    try {
+                        generateSummaryContent();
+                        showToast('Check-in summary generated!', 'success');
+                    } catch (error) {
+                        console.error('Error generating summary:', error);
+                        showToast('Something went wrong. Please try again.', 'error');
+                    } finally {
+                        // Restore button state
+                        elements.generateText.classList.remove('hidden');
+                        elements.generateLoading.classList.add('hidden');
+                        elements.generateBtn.disabled = false;
+                        exportInProgress = false;
+                        updateGenerateButtonState();
+                    }
+                }, 600);
+            }
+
+            function generateSummaryContent() {
+                // Build summary texts
+                const stateText = `Right now, you're noticing sensations that align with <strong>${selectedState.description}</strong>.`;
+                const needsText = selectedNeeds.length > 0 
+                    ? `You identified possible needs: <strong>${selectedNeeds.join(', ')}</strong>.` 
+                    : "You didn't select any specific needs—that's okay too.";
+                const stepText = selectedStep 
+                    ? `One tiny step you considered: <strong>${selectedStep}</strong>.` 
+                    : "You didn't choose a step—sometimes just noticing is enough.";
+                
+                // Optional notes
+                const stateNote = selectedState.note ? `<br><em class="text-gray-600">"${escapeHTML(selectedState.note)}"</em>` : '';
+                const userNeedsNote = elements.needsNoteInput?.value.trim() || '';
+                const needsNote = userNeedsNote ? `<br><em class="text-gray-600">"${escapeHTML(userNeedsNote)}"</em>` : '';
+
+                // Timestamp
+                const now = new Date();
+                const timestampStr = now.toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit', 
+                    minute: '2-digit'
+                });
+
+                // Update DOM
+                elements.stateSummary.innerHTML = stateText + stateNote;
+                elements.needsSummary.innerHTML = needsText + needsNote;
+                elements.stepSummary.innerHTML = stepText;
+                elements.timestamp.textContent = timestampStr;
+
+                // Store data for export
+                currentSummaryData = {
+                    plainText: `Nervous System Check-In Summary\n${'='.repeat(40)}\n\n` +
+                              `Date: ${timestampStr}\n\n` +
+                              `Current State: ${selectedState.description}\n` +
+                              `${selectedState.note ? `Note: ${selectedState.note}\n` : ''}\n` +
+                              `Identified Needs: ${selectedNeeds.join(', ') || 'None selected'}\n` +
+                              `${userNeedsNote ? `Additional notes: ${userNeedsNote}\n` : ''}\n` +
+                              `Tiny Next Step: ${selectedStep || 'None selected'}\n\n` +
+                              `${'-'.repeat(40)}\n` +
+                              `Generated via What Really Happened (groundedcptsd.com)\n` +
+                              `Educational tool only • Not therapeutic or diagnostic\n` +
+                              `If in crisis, contact 988 or your healthcare provider.`,
+                    html: elements.summaryContent.innerHTML,
+                    timestamp: timestampStr
+                };
+
+                // Show results
+                elements.resultsDiv.classList.remove('hidden');
+                elements.resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                // Announce to screen readers
+                announceToScreenReader('Check-in summary generated. Use tab key to access export options.');
+                
+                // Focus on first export button for accessibility
+                setTimeout(() => {
+                    document.getElementById('copy-btn').focus();
+                }, 300);
+            }
+
+            function handleExportClicks(e) {
+                if (!currentSummaryData || exportInProgress) return;
+                
+                const copyBtn = e.target.closest('#copy-btn');
+                const printBtn = e.target.closest('#print-btn');
+                const downloadBtn = e.target.closest('#download-btn');
+                
+                if (copyBtn) {
+                    e.preventDefault();
+                    handleCopy(copyBtn);
+                } else if (printBtn) {
+                    e.preventDefault();
+                    handlePrint();
+                } else if (downloadBtn) {
+                    e.preventDefault();
+                    handleDownload(downloadBtn);
+                }
+            }
+
+            async function handleCopy(btn) {
+                exportInProgress = true;
+                const originalText = btn.innerHTML;
+                
+                try {
+                    await navigator.clipboard.writeText(currentSummaryData.plainText);
+                    updateButtonState(btn, true, '✓ Copied!', 'copy');
+                    showToast('Summary copied to clipboard!', 'success');
+                    
+                    // Analytics event (optional)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'checkin_copy', {
+                            'event_category': 'engagement',
+                            'event_label': 'copy_summary'
+                        });
+                    }
+                } catch (err) {
+                    console.warn('Clipboard API failed, using fallback:', err);
+                    const success = fallbackCopyText(currentSummaryData.plainText, btn);
+                    if (success) {
+                        showToast('Copied to clipboard!', 'success');
+                    } else {
+                        showToast('Unable to copy. Please select and copy manually.', 'warning');
+                    }
+                } finally {
+                    setTimeout(() => {
+                        updateButtonState(btn, false, originalText, 'copy');
+                        exportInProgress = false;
+                    }, 2000);
+                }
+            }
+
+            function handlePrint() {
+                if (!currentSummaryData) return;
+                
+                const printContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In Summary - ${currentSummaryData.timestamp}</title>
+    <style>
+        @media print {
+            @page { margin: 1cm; }
+            body { 
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                line-height: 1.6; 
+                color: #000; 
+                max-width: 800px; 
+                margin: 0 auto; 
+                padding: 0; 
+                font-size: 12pt; 
+            }
+            h1 { 
+                color: #4f46e5; 
+                border-bottom: 2px solid #e5e7eb; 
+                padding-bottom: 0.5rem; 
+                margin: 1.5rem 0 1rem; 
+                font-size: 18pt; 
+            }
+            .timestamp { color: #6b7280; font-size: 10pt; margin-bottom: 1.5rem; }
+            .summary-box { background: #f9fafb; padding: 1rem; border-radius: 4px; border: 1px solid #e5e7eb; }
+            .section { margin-bottom: 1rem; }
+            .section-title { font-weight: bold; font-size: 10pt; text-transform: uppercase; color: #6b7280; margin-bottom: 0.25rem; }
+            .disclaimer { 
+                margin-top: 2rem; 
+                padding-top: 1rem; 
+                border-top: 1px solid #e5e7eb; 
+                font-size: 9pt; 
+                color: #9ca3af; 
+                text-align: center; 
+            }
+            .no-print { display: none !important; }
+        }
+        @media screen {
+            body { padding: 2rem; background: #fff; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Nervous System Check-In Summary</h1>
+    <div class="timestamp">${escapeHTML(currentSummaryData.timestamp)}</div>
+    <div class="summary-box">${currentSummaryData.html}</div>
+    <div class="disclaimer">
+        <p><strong>Important:</strong> This is an educational tool for self-reflection, not a therapeutic or diagnostic resource.</p>
+        <p>If you're in crisis, please contact 988 (US/Canada) or your local crisis line.</p>
+        <p>Generated via <strong>What Really Happened</strong> • groundedcptsd.com</p>
+    </div>
+    <script>
+        window.addEventListener('afterprint', function() {
+            window.close();
+        });
+        // Auto-print
+        window.onload = function() {
+            setTimeout(function() {
+                window.print();
+            }, 250);
+        };
+    </script>
+</body>
+</html>`;
+
+                const printWindow = window.open('', '_blank', 'width=800,height=600,toolbar=no,location=no');
+                if (!printWindow) {
+                    showToast('Please allow popups to print your summary.', 'warning');
+                    return;
+                }
+
+                printWindow.document.write(printContent);
+                printWindow.document.close();
+            }
+
+            function handleDownload(btn) {
+                if (!currentSummaryData) return;
+                
+                const dateStr = new Date().toISOString().slice(0, 10);
+                const timeStr = new Date().toTimeString().slice(0, 5).replace(':', '-');
+                const filename = `nervous-system-checkin_${dateStr}_${timeStr}.txt`;
+                
+                try {
+                    const blob = new Blob([currentSummaryData.plainText], { 
+                        type: 'text/plain;charset=utf-8' 
+                    });
+                    
+                    // Use MS-specific method for IE/Edge
+                    if (navigator.msSaveBlob) {
+                        navigator.msSaveBlob(blob, filename);
+                    } else {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = filename;
+                        a.style.display = 'none';
+                        document.body.appendChild(a);
+                        a.click();
+                        
+                        // Cleanup
+                        setTimeout(() => {
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+                        }, 100);
+                    }
+                    
+                    updateButtonState(btn, true, '✓ Downloaded!', 'download');
+                    showToast(`Summary saved as "${filename}"`, 'success');
+                    
+                } catch (err) {
+                    console.error('Download failed:', err);
+                    showToast('Download failed. Please try again.', 'error');
+                } finally {
+                    setTimeout(() => {
+                        updateButtonState(btn, false, 'Download .txt', 'download');
+                    }, 2000);
+                }
+            }
+
+            function fallbackCopyText(text, btn) {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.top = '0';
+                textArea.style.left = '0';
+                textArea.style.width = '2em';
+                textArea.style.height = '2em';
+                textArea.style.padding = '0';
+                textArea.style.border = 'none';
+                textArea.style.outline = 'none';
+                textArea.style.boxShadow = 'none';
+                textArea.style.background = 'transparent';
+                
+                document.body.appendChild(textArea);
+                
+                try {
+                    textArea.select();
+                    textArea.setSelectionRange(0, 99999); // For mobile devices
+                    const successful = document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    if (successful && btn) {
+                        updateButtonState(btn, true, '✓ Copied!', 'copy');
+                    }
+                    return successful;
+                } catch (err) {
+                    document.body.removeChild(textArea);
+                    return false;
+                }
+            }
+
+            function updateButtonState(btn, isSuccess, content, type) {
+                const icon = isSuccess 
+                    ? '<svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>'
+                    : type === 'copy' 
+                        ? '<svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>'
+                        : type === 'print'
+                            ? '<svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>'
+                            : '<svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>';
+                
+                btn.innerHTML = icon + content;
+                
+                // Update classes based on state
+                btn.classList.remove('bg-green-100', 'text-green-800', 'bg-indigo-50', 'text-indigo-700', 'bg-green-50', 'text-green-700', 'bg-gray-100', 'text-gray-700');
+                
+                if (isSuccess) {
+                    btn.classList.add('bg-green-100', 'text-green-800');
+                } else {
+                    switch(type) {
+                        case 'copy': btn.classList.add('bg-indigo-50', 'text-indigo-700'); break;
+                        case 'download': btn.classList.add('bg-green-50', 'text-green-700'); break;
+                        case 'print': btn.classList.add('bg-gray-100', 'text-gray-700'); break;
+                    }
+                }
+            }
+
+            function handleReset() {
+                if (selectedState && !confirm('Start over? Your current check-in will be cleared.')) {
+                    return;
+                }
+                
+                // Reset state
+                selectedState = null;
+                selectedNeeds = [];
+                selectedStep = '';
+                currentSummaryData = null;
+                exportInProgress = false;
+                
+                // Reset UI
+                elements.stateButtons.forEach(b => {
+                    b.classList.remove('border-green-500', 'bg-green-900/20', 
+                                      'border-ember', 'bg-orange-900/20', 
+                                      'border-blue-500', 'bg-blue-900/20');
+                });
+                
+                elements.needsCheckboxes.forEach(cb => cb.checked = false);
+                elements.stepButtons.forEach(b => b.classList.remove('border-green-500', 'bg-green-900/20'));
+                elements.allOptionalNotes.forEach(el => el.value = '');
+                
+                if (elements.resultsDiv) {
+                    elements.resultsDiv.classList.add('hidden');
+                }
+                
+                updateGenerateButtonState();
+                showToast('Check-in reset. Ready to start fresh.', 'info');
+                announceToScreenReader('Check-in form reset. Ready to begin new check-in.');
+                
+                // Scroll to top of check-in section
+                document.getElementById('check-in').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Utility functions
+            function escapeHTML(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            function createToastContainer() {
+                const container = document.createElement('div');
+                container.id = 'toast-container';
+                container.className = 'fixed top-4 right-4 z-50 space-y-3';
+                document.body.appendChild(container);
+            }
+
+            function showToast(message, type = 'info') {
+                const container = document.getElementById('toast-container');
+                if (!container) return;
+                
+                const toast = document.createElement('div');
+                toast.className = `px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-x-full opacity-0 ${
+                    type === 'success' ? 'bg-green-900/90 text-green-100 border border-green-700' :
+                    type === 'error' ? 'bg-red-900/90 text-red-100 border border-red-700' :
+                    type === 'warning' ? 'bg-yellow-900/90 text-yellow-100 border border-yellow-700' :
+                    'bg-blue-900/90 text-blue-100 border border-blue-700'
+                }`;
+                toast.innerHTML = `
+                    <div class="flex items-center">
+                        <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            ${type === 'success' ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>' :
+                              type === 'error' ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>' :
+                              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>'}
+                        </svg>
+                        <span>${message}</span>
+                    </div>
+                `;
+                toast.setAttribute('role', 'alert');
+                toast.setAttribute('aria-live', 'polite');
+                
+                container.appendChild(toast);
+                
+                // Animate in
+                requestAnimationFrame(() => {
+                    toast.classList.remove('translate-x-full', 'opacity-0');
+                    toast.classList.add('translate-x-0', 'opacity-100');
+                });
+                
+                // Remove after 4 seconds
+                setTimeout(() => {
+                    toast.classList.remove('translate-x-0', 'opacity-100');
+                    toast.classList.add('translate-x-full', 'opacity-0');
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.parentNode.removeChild(toast);
+                        }
+                    }, 300);
+                }, 4000);
+            }
+
+            function announceToScreenReader(message) {
+                const announcement = document.createElement('div');
+                announcement.setAttribute('aria-live', 'polite');
+                announcement.setAttribute('aria-atomic', 'true');
+                announcement.className = 'sr-only';
+                announcement.textContent = message;
+                
+                document.body.appendChild(announcement);
+                setTimeout(() => announcement.remove(), 100);
+            }
+
+            // Initialize everything
+            initializeEventListeners();
+            updateGenerateButtonState();
+            
+            // Announce tool is ready for screen readers
+            setTimeout(() => {
+                announceToScreenReader('Nervous system check-in tool is ready. Please acknowledge the safety notice to begin.');
+            }, 1000);
         });
     </script>
 </body>
